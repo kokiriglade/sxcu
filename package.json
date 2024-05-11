@@ -1,0 +1,25 @@
+{
+  "name": "sxcu",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "fmt": "bun x prettier --write \"**/*.ts\""
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/mime-types": "^2.1.4",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.57.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@bit-js/blitz": "^1.0.13",
+    "@jsr/std__log": "^0.220.1",
+    "@jsr/std__toml": "^0.220.1",
+    "mime-types": "^2.1.35"
+  }
+}
