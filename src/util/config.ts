@@ -92,7 +92,7 @@ async function loadConfig(file: string): Promise<Config> {
 
         return final
     } catch (e) {
-        if ((e as Error).name == "ENOENT") {
+        if ((e as Error).message.startsWith("ENOENT")) {
             await saveConfig(defaultConfig, file)
             return defaultConfig
         } else {

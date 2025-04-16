@@ -27,10 +27,10 @@ config.namespaces.forEach((namespace) => {
 
 const router = new Blitz()
 
-router.put("GET", "/", () => Response.redirect(new URL(config.web.redirect_to), 302))
-router.put("POST", "/api/upload", upload)
+router.on("GET", "/", () => Response.redirect(config.web.redirect_to, 302))
+router.on("POST", "/api/upload", upload)
 
-router.put("GET", "/*", async (ctx) => {
+router.on("GET", "/*", async (ctx) => {
     const param: string = ctx.params.$
 
     const { dir: possibleNamespace, base: name } = parse(param)
